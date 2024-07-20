@@ -29,18 +29,21 @@ const HeroSection = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/api/referrals", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          referrerName,
-          referrerEmail,
-          refereeName,
-          refereeEmail,
-        }),
-      });
+      const response = await fetch(
+        "https://accredian-backend-task-yvj5.onrender.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            referrerName,
+            referrerEmail,
+            refereeName,
+            refereeEmail,
+          }),
+        }
+      );
 
       if (!response.ok) {
         const data = await response.json();
